@@ -1,0 +1,36 @@
+---
+title: DSF Documentation
+description: Official documentation for DSF.
+template: splash
+hero:
+  tagline: Built with Starlight’s multilingual docs template.
+  image:
+    file: ../../../assets/houston.webp
+  actions:
+    - text: Example Guide
+      link: /en/guides/example/
+      icon: right-arrow
+    - text: Starlight Docs
+      link: https://starlight.astro.build
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Next steps
+
+<CardGrid stagger>
+	<Card title="Update content" icon="pencil">
+		Edit Markdown or MDX under `src/content/docs/en/`.
+	</Card>
+	<Card title="Change layout" icon="document">
+		Remove `template: splash` from this page to show the sidebar on the home page.
+	</Card>
+	<Card title="Add pages" icon="add-document">
+		Mirror paths under `ja/` and `en/` so the language switcher can pair pages.
+	</Card>
+	<Card title="Configure" icon="setting">
+		Update `astro.config.mjs` for sidebar labels and locales.
+	</Card>
+</CardGrid>

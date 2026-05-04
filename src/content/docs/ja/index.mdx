@@ -1,0 +1,36 @@
+---
+title: DSF ドキュメント
+description: DSF の公式ドキュメントサイトです。
+template: splash
+hero:
+  tagline: Starlight の多言語テンプレートで作成しました。
+  image:
+    file: ../../../assets/houston.webp
+  actions:
+    - text: サンプルガイド
+      link: /ja/guides/example/
+      icon: right-arrow
+    - text: Starlight 公式
+      link: https://starlight.astro.build
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## 次のステップ
+
+<CardGrid stagger>
+	<Card title="コンテンツを更新" icon="pencil">
+		`src/content/docs/ja/` 以下の Markdown / MDX を編集します。
+	</Card>
+	<Card title="レイアウトを変える" icon="document">
+		トップのスプラッシュをやめる場合は `template: splash` を削除してください。
+	</Card>
+	<Card title="ページを追加" icon="add-document">
+		`ja/` と `en/` に同じパスでファイルを置くと言語切替が効きます。
+	</Card>
+	<Card title="設定" icon="setting">
+		サイドバーや `locales` は `astro.config.mjs` で変更します。
+	</Card>
+</CardGrid>
