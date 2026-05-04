@@ -8,6 +8,12 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'DSF Docs',
+			logo: {
+				light: './src/assets/dsf-logo.svg',
+				dark: './src/assets/dsf-logo-dark.svg',
+				alt: 'DSF',
+				replacesTitle: false,
+			},
 			defaultLocale: 'ja',
 			locales: {
 				ja: { label: '日本語', lang: 'ja' },
