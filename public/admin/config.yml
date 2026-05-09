@@ -1,24 +1,22 @@
-# DSF Docs — Decap CMS
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
 #
-# ▼ GitHub ログイン設定は「詳しくはリポジトリの説明／チャットの手順」を参照。
-# 仲介に Netlify の OAuth を使う場合、GitHub OAuth App の callback は
-#   https://api.netlify.com/auth/done
-# ローカルだけ: 別ターミナルで npx decap-server を起動し、local_backend を true。
-
-local_backend: false
+# DSF Docs — Sveltia CMS（Decap 後継）
+# GitHub OAuth: https://sveltiacms.app/en/docs/backends/github
+# Netlify 仲介を使う場合、GitHub OAuth App の callback は https://api.netlify.com/auth/done
+#
+# ローカル編集: https://sveltiacms.app/en/docs/workflows/local （ブラウザのローカルワークフロー）
 
 backend:
   name: github
   repo: tetsuji-d/dsf-docs
   branch: master
-  # Netlify が GitHub OAuth のサーバー側処理を代行（サイト本体は Cloudflare のままで可）
-  # 手順: GitHub で OAuth App 作成 → Netlify の Site に Client ID/Secret を登録
   base_url: https://api.netlify.com
   auth_endpoint: auth
 
 site_url: https://docs.dsf.ink
 display_url: https://docs.dsf.ink
 
+# Sveltia: ネストした Decap 互換 collection は未対応のため、guides / reference を分割しています。
 media_folder: public/uploads
 public_folder: /uploads
 
@@ -52,29 +50,49 @@ collections:
                   - { label: 表示名（JA）, name: labelJa, widget: string }
                   - { label: Label（EN）, name: labelEn, widget: string }
 
-  - name: docs_ja
-    label: ページ（日本語）
-    folder: src/content/docs/ja
-    create: true
-    slug: "{{slug}}"
+  - name: docs_ja_guides
+    label: ページ（日本語）/ ガイド
+    folder: src/content/docs/ja/guides
+    slug: '{{fields._slug}}'
     extension: md
     format: frontmatter
-    nested:
-      depth: 12
+    preview_path: '/ja/guides/{{slug}}/'
     fields:
       - { label: タイトル, name: title, widget: string }
       - { label: 説明, name: description, widget: string, required: false }
       - { label: 本文, name: body, widget: markdown }
 
-  - name: docs_en
-    label: Pages（English）
-    folder: src/content/docs/en
-    create: true
-    slug: "{{slug}}"
+  - name: docs_ja_reference
+    label: ページ（日本語）/ リファレンス
+    folder: src/content/docs/ja/reference
+    slug: '{{fields._slug}}'
     extension: md
     format: frontmatter
-    nested:
-      depth: 12
+    preview_path: '/ja/reference/{{slug}}/'
+    fields:
+      - { label: タイトル, name: title, widget: string }
+      - { label: 説明, name: description, widget: string, required: false }
+      - { label: 本文, name: body, widget: markdown }
+
+  - name: docs_en_guides
+    label: Pages (English) / Guides
+    folder: src/content/docs/en/guides
+    slug: '{{fields._slug}}'
+    extension: md
+    format: frontmatter
+    preview_path: '/en/guides/{{slug}}/'
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: string, required: false }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: docs_en_reference
+    label: Pages (English) / Reference
+    folder: src/content/docs/en/reference
+    slug: '{{fields._slug}}'
+    extension: md
+    format: frontmatter
+    preview_path: '/en/reference/{{slug}}/'
     fields:
       - { label: Title, name: title, widget: string }
       - { label: Description, name: description, widget: string, required: false }
