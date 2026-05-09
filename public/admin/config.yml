@@ -1,8 +1,9 @@
 # DSF Docs — Decap CMS
-# GitHub でログインしてコミットするまで:
-#   https://decapcms.org/docs/github-backend/
-# OAuth アプリの Authorization callback はサイトに合わせて登録してください（例: https://docs.dsf.ink/admin/）。
-# ローカルだけで試す: npx decap-server （別ターミナル）+ 下の local_backend を true に。
+#
+# ▼ GitHub ログイン設定は「詳しくはリポジトリの説明／チャットの手順」を参照。
+# 仲介に Netlify の OAuth を使う場合、GitHub OAuth App の callback は
+#   https://api.netlify.com/auth/done
+# ローカルだけ: 別ターミナルで npx decap-server を起動し、local_backend を true。
 
 local_backend: false
 
@@ -10,6 +11,10 @@ backend:
   name: github
   repo: tetsuji-d/dsf-docs
   branch: master
+  # Netlify が GitHub OAuth のサーバー側処理を代行（サイト本体は Cloudflare のままで可）
+  # 手順: GitHub で OAuth App 作成 → Netlify の Site に Client ID/Secret を登録
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
 
 site_url: https://docs.dsf.ink
 display_url: https://docs.dsf.ink
