@@ -1,17 +1,19 @@
 # yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
 #
-# DSF Docs — Sveltia CMS（Decap 後継）
-# GitHub OAuth: https://sveltiacms.app/en/docs/backends/github
-# Netlify 仲介を使う場合、GitHub OAuth App の callback は https://api.netlify.com/auth/done
+# DSF Docs — Sveltia CMS
 #
-# ローカル編集: https://sveltiacms.app/en/docs/workflows/local （ブラウザのローカルワークフロー）
+# 本番は Cloudflare Pages のため Netlify OAuth（api.netlify.com）は使えません。
+# ログイン方法:
+#   A) 管理画面の「Sign in with token」→ GitHub の fine-grained または classic PAT（repo 権限）
+#      https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+#   B) 非エンジニア向けに GitHub OAuth が必要なら Cloudflare Workers で Sveltia CMS Authenticator を置き、
+#      backend.base_url に Worker の URL だけを設定（auth_endpoint は不要）
+#      https://github.com/sveltia/sveltia-cms-auth
 
 backend:
   name: github
   repo: tetsuji-d/dsf-docs
   branch: master
-  base_url: https://api.netlify.com
-  auth_endpoint: auth
 
 site_url: https://docs.dsf.ink
 display_url: https://docs.dsf.ink
