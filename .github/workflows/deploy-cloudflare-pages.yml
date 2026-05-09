@@ -7,6 +7,29 @@ on:
       - main
 
 jobs:
+  deploy-sveltia-auth:
+    if: ${{ secrets.SVELTIA_GITHUB_CLIENT_ID != '' && secrets.SVELTIA_GITHUB_CLIENT_SECRET != '' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy Sveltia CMS Authenticator Worker
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: "4"
+          workingDirectory: workers/sveltia-cms-auth
+          command: deploy
+          secrets: |
+            GITHUB_CLIENT_ID
+            GITHUB_CLIENT_SECRET
+        env:
+          GITHUB_CLIENT_ID: ${{ secrets.SVELTIA_GITHUB_CLIENT_ID }}
+          GITHUB_CLIENT_SECRET: ${{ secrets.SVELTIA_GITHUB_CLIENT_SECRET }}
+
   deploy:
     runs-on: ubuntu-latest
     permissions:
@@ -21,6 +44,11 @@ jobs:
           cache: npm
 
       - run: npm ci
+
+      - name: Inject Sveltia auth base_url (optional)
+        env:
+          SVELTIA_AUTH_BASE_URL: ${{ vars.SVELTIA_AUTH_BASE_URL }}
+        run: node scripts/inject-sveltia-auth-url.mjs
 
       - run: npm run build
 

@@ -1,0 +1,8 @@
+# Sveltia CMS Authenticator — https://github.com/sveltia/sveltia-cms-auth
+name = "dsf-docs-sveltia-auth"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+[vars]
+# カンマ区切り。CMS が ?site_id= に渡すホストと一致させる（docs の site_url 由来）。
+ALLOWED_DOMAINS = "docs.dsf.ink"

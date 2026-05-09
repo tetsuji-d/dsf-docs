@@ -4,11 +4,14 @@
 #
 # 本番は Cloudflare Pages のため Netlify OAuth（api.netlify.com）は使えません。
 # ログイン方法:
-#   A) 管理画面の「Sign in with token」→ GitHub の fine-grained または classic PAT（repo 権限）
-#      https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
-#   B) 非エンジニア向けに GitHub OAuth が必要なら Cloudflare Workers で Sveltia CMS Authenticator を置き、
-#      backend.base_url に Worker の URL だけを設定（auth_endpoint は不要）
-#      https://github.com/sveltia/sveltia-cms-auth
+#   A) 管理画面の「Sign in with token」→ GitHub PAT（repo 権限）
+#   B) GitHub OAuth（Sveltia Authenticator Worker）— リポ内 workers/sveltia-cms-auth を CI デプロイ:
+#      · GitHub Actions Secrets: SVELTIA_GITHUB_CLIENT_ID, SVELTIA_GITHUB_CLIENT_SECRET
+#      · GitHub OAuth App の Callback URL: https://<worker 名>.<account>.workers.dev/callback
+#        （Worker 名は wrangler.toml の name = dsf-docs-sveltia-auth）
+#      · Actions Variables: SVELTIA_AUTH_BASE_URL = 上記 Worker のトップ URL（末尾スラッシュなし）
+#        未設定ならビルド時に base_url は注入されず、PAT ログインのみ有効
+#      · 許可ドメインは workers/sveltia-cms-auth/wrangler.toml の ALLOWED_DOMAINS（site_url と一致）
 
 backend:
   name: github
