@@ -8,14 +8,27 @@ on:
 
 jobs:
   deploy-sveltia-auth:
-    if: ${{ secrets.SVELTIA_GITHUB_CLIENT_ID != '' && secrets.SVELTIA_GITHUB_CLIENT_SECRET != '' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
     steps:
       - uses: actions/checkout@v4
 
+      # job レベルの if では secrets が使えない（即時失敗・ジョブ 0 件になる）ため、ステップで判定する
+      - name: Detect OAuth secrets for Worker
+        id: oauth
+        run: |
+          if [ -n "$CLIENT_ID" ] && [ -n "$CLIENT_SECRET" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+          fi
+        env:
+          CLIENT_ID: ${{ secrets.SVELTIA_GITHUB_CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.SVELTIA_GITHUB_CLIENT_SECRET }}
+
       - name: Deploy Sveltia CMS Authenticator Worker
+        if: steps.oauth.outputs.enabled == 'true'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}

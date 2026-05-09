@@ -7,6 +7,7 @@
 #   A) 管理画面の「Sign in with token」→ GitHub PAT（repo 権限）
 #   B) GitHub OAuth（Sveltia Authenticator Worker）— リポ内 workers/sveltia-cms-auth を CI デプロイ:
 #      · GitHub Actions Secrets: SVELTIA_GITHUB_CLIENT_ID, SVELTIA_GITHUB_CLIENT_SECRET
+#        （未設定でも Pages のデプロイは続行されます；設定後に Worker だけデプロイされます）
 #      · GitHub OAuth App の Callback URL: https://<worker 名>.<account>.workers.dev/callback
 #        （Worker 名は wrangler.toml の name = dsf-docs-sveltia-auth）
 #      · Actions Variables: SVELTIA_AUTH_BASE_URL = 上記 Worker のトップ URL（末尾スラッシュなし）
