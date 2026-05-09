@@ -1,0 +1,76 @@
+# DSF Docs — Decap CMS
+# GitHub でログインしてコミットするまで:
+#   https://decapcms.org/docs/github-backend/
+# OAuth アプリの Authorization callback はサイトに合わせて登録してください（例: https://docs.dsf.ink/admin/）。
+# ローカルだけで試す: npx decap-server （別ターミナル）+ 下の local_backend を true に。
+
+local_backend: false
+
+backend:
+  name: github
+  repo: tetsuji-d/dsf-docs
+  branch: master
+
+site_url: https://docs.dsf.ink
+display_url: https://docs.dsf.ink
+
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: site_sidebar
+    label: サイドバー JA/EN
+    files:
+      - name: sidebar
+        label: ナビゲーション構成
+        file: src/config/sidebar.config.json
+        fields:
+          - label: グループ
+            name: groups
+            widget: list
+            fields:
+              - { label: グループ名（日本語）, name: labelJa, widget: string }
+              - { label: Group title（English）, name: labelEn, widget: string }
+              - label: autogenerate（フォルダ自動列挙）
+                name: autogenerate
+                widget: object
+                required: false
+                collapsed: true
+                fields:
+                  - { label: directory（例 reference）, name: directory, widget: string, required: false }
+              - label: 手動メニュー項目（slug 指定）
+                name: items
+                widget: list
+                required: false
+                fields:
+                  - { label: slug（例 guides/start）, name: slug, widget: string }
+                  - { label: 表示名（JA）, name: labelJa, widget: string }
+                  - { label: Label（EN）, name: labelEn, widget: string }
+
+  - name: docs_ja
+    label: ページ（日本語）
+    folder: src/content/docs/ja
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    nested:
+      depth: 12
+    fields:
+      - { label: タイトル, name: title, widget: string }
+      - { label: 説明, name: description, widget: string, required: false }
+      - { label: 本文, name: body, widget: markdown }
+
+  - name: docs_en
+    label: Pages（English）
+    folder: src/content/docs/en
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    nested:
+      depth: 12
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: string, required: false }
+      - { label: Body, name: body, widget: markdown }

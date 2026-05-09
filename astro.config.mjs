@@ -1,6 +1,7 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import { defineConfig } from 'astro/config';
+import { getStarlightSidebar } from './src/config/build-starlight-sidebar.mjs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,24 +21,7 @@ export default defineConfig({
 				en: { label: 'English', lang: 'en' },
 			},
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
-			sidebar: [
-				{
-					label: 'ガイド',
-					translations: { en: 'Guides', ja: 'ガイド' },
-					items: [
-						{
-							label: 'サンプルガイド',
-							translations: { en: 'Example Guide', ja: 'サンプルガイド' },
-							slug: 'guides/example',
-						},
-					],
-				},
-				{
-					label: 'リファレンス',
-					translations: { en: 'Reference', ja: 'リファレンス' },
-					autogenerate: { directory: 'reference' },
-				},
-			],
+			sidebar: getStarlightSidebar(),
 		}),
 	],
 });

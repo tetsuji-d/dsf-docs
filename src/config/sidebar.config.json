@@ -1,0 +1,22 @@
+{
+	"groups": [
+		{
+			"labelJa": "ガイド",
+			"labelEn": "Guides",
+			"autogenerate": null,
+			"items": [
+				{
+					"slug": "guides/example",
+					"labelJa": "サンプルガイド",
+					"labelEn": "Example Guide"
+				}
+			]
+		},
+		{
+			"labelJa": "リファレンス",
+			"labelEn": "Reference",
+			"autogenerate": { "directory": "reference" },
+			"items": []
+		}
+	]
+}
