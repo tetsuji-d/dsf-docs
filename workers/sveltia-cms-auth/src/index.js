@@ -8,30 +8,31 @@ const escapeRegExp = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const outputHTML = ({ provider = 'unknown', token, error, errorCode }) => {
   const state = error ? 'error' : 'success';
   const content = error ? { provider, error, errorCode } : { provider, token };
+  const payload = `authorization:${provider}:${state}:${JSON.stringify(content)}`;
 
-  return new Response(
-    `
+  const body = `<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="referrer" content="no-referrer"><title>Authorize</title></head>
+<body>
+<script>
+(() => {
+  window.addEventListener('message', ({ data, origin }) => {
+    if (data === 'authorizing:${provider}') {
+      window.opener?.postMessage(${JSON.stringify(payload)}, origin);
+    }
+  });
+  window.opener?.postMessage('authorizing:${provider}', '*');
+})();
+</script>
+</body>
+</html>`;
 
- (() => {
- window.addEventListener('message', ({ data, origin }) => {
- if (data === 'authorizing:${provider}') {
- window.opener?.postMessage(
- 'authorization:${provider}:${state}:${JSON.stringify(content)}',
- origin
- );
- }
- });
- window.opener?.postMessage('authorizing:${provider}', '*');
- })();
-
- `,
-    {
-      headers: {
-        'Content-Type': 'text/html;charset=UTF-8',
-        'Set-Cookie': `csrf-token=deleted; HttpOnly; Max-Age=0; Path=/; SameSite=Lax; Secure`,
-      },
+  return new Response(body, {
+    headers: {
+      'Content-Type': 'text/html;charset=UTF-8',
+      'Set-Cookie': `csrf-token=deleted; HttpOnly; Max-Age=0; Path=/; SameSite=Lax; Secure`,
     },
-  );
+  });
 };
 
 const handleAuth = async (request, env) => {
