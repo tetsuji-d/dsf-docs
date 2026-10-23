@@ -15,6 +15,11 @@ Horizon connects discovering Reads with creating and publishing them. A Read can
 
 Manuscripts, projects, pages, body text and assets still refer to their specific roles. They are not interchangeable with Read.
 
+<figure class="guide-screenshot">
+  <a href="/screenshots/en-menu.png" aria-label="Enlarge screenshot"><img src="/screenshots/en-menu.png" alt="Horizon menu with entries for Horizon, Studio and Reader and the menu language selector" width="1440" height="1000" loading="lazy" decoding="async" /></a>
+  <figcaption>The shared Horizon, Studio and Reader menu. How to use also opens the official guide. <a href="/screenshots/en-menu.png">Enlarge image</a></figcaption>
+</figure>
+
 ## Publishing that preserves layout
 
 DSF means Digital Spread Format. Its base page ratio is 9:16. Text position, image size and white space remain part of the creator’s expression.
@@ -29,6 +34,11 @@ Graphic pages can use WebP images, while text pages can use precomposed fixed te
 4. To add your own notes, use Writing on a supported Read.
 
 Continue with [Read a Read](../read/) and [Add your own notes](../writing/).
+
+<figure class="guide-screenshot">
+  <a href="/screenshots/en-reader.png" aria-label="Enlarge screenshot"><img src="/screenshots/en-reader.png" alt="DSF Reader displaying the fictional Writing sample" width="1440" height="1000" loading="lazy" decoding="async" /></a>
+  <figcaption>A sample Read open in Reader. The controls on the right include information, Writing and display modes. <a href="/screenshots/en-reader.png">Enlarge image</a></figcaption>
+</figure>
 
 ## Start by creating
 
@@ -57,4 +67,3 @@ If prompted, set up a DSF public profile. The public name shown to readers and c
 The **menu language** controls application labels. The **Read language** selects a language variant actually included in the publication.
 
 Changing menus to English does not translate the body text. Reader can only offer languages included in that Read.
-

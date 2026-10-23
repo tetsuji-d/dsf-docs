@@ -17,6 +17,11 @@ Horizonは、リードを探す・公開する・集めるプラットフォー�
 
 原稿、プロジェクト、ページ、本文、素材は、それぞれの対象を指す言葉です。「リード」とすべて同じ意味ではありません。
 
+<figure class="guide-screenshot">
+  <a href="/screenshots/ja-menu.png" aria-label="スクリーンショットを拡大"><img src="/screenshots/ja-menu.png" alt="Horizonメニューに並ぶHorizon・Studio・Readerの入口とメニュー言語" width="1440" height="1000" loading="lazy" decoding="async" /></a>
+  <figcaption>Horizon・Studio・Readerの共通メニュー。「使い方」から公式ガイドも開けます。 <a href="/screenshots/ja-menu.png">画像を拡大</a></figcaption>
+</figure>
+
 ## レイアウトを保つ出版
 
 DSFはDigital Spread Formatの略です。基本のページ比率は9:16。文字の配置、写真の大きさ、余白も含めて作者の表現を届けます。
@@ -31,6 +36,11 @@ DSFはDigital Spread Formatの略です。基本のページ比率は9:16。文�
 4. 自分のメモを残したい場合は、対応するリードでWritingを使います。
 
 続きは[リードを読む](../read/)と[書き込みを残す](../writing/)をご覧ください。
+
+<figure class="guide-screenshot">
+  <a href="/screenshots/ja-reader.png" aria-label="スクリーンショットを拡大"><img src="/screenshots/ja-reader.png" alt="Readerで説明用のWriting操作サンプルを開いた画面" width="1440" height="1000" loading="lazy" decoding="async" /></a>
+  <figcaption>Readerでサンプルのページを開いた表示例。右側に情報・書き込み・表示などの操作が並びます。 <a href="/screenshots/ja-reader.png">画像を拡大</a></figcaption>
+</figure>
 
 ## つくるところから始める
 
@@ -59,4 +69,3 @@ Writingの編集用ファイルも.dsfrです。Studioの原稿プロジェク�
 **メニュー言語**はアプリのボタンや説明の言語です。**リードの言語**は本文として収録されている言語です。
 
 メニューを英語に切り替えても、本文が自動翻訳されるわけではありません。Readerで選べる本文の言語は、そのリードに収録されているものに限られます。
-

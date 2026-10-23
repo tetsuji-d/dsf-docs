@@ -32,11 +32,21 @@ Flow is an authoring method. It does not mean Reader reflows the publication to 
 
 White space and text positioning are part of the work. Check readability at a size appropriate for smartphone reading.
 
+<figure class="guide-screenshot">
+  <a href="/screenshots/en-editor.png" aria-label="Enlarge screenshot"><img src="/screenshots/en-editor.png" alt="Studio Editor with a fictional 9:16 sample page image" width="1440" height="1000" loading="lazy" decoding="async" /></a>
+  <figcaption>The Editor with an original sample page image. Editing and Press controls appear at the top. <a href="/screenshots/en-editor.png">Enlarge image</a></figcaption>
+</figure>
+
 ## Manage Read languages
 
 Check project languages and each manuscript’s language. Adding a language does not create translated text. Prepare the body, images and titles required for each variant.
 
 Preview each Read language and verify the intended page structure.
+
+<figure class="guide-screenshot">
+  <a href="/screenshots/en-project-settings.png" aria-label="Enlarge screenshot"><img src="/screenshots/en-project-settings.png" alt="Project settings showing the default and additional Read languages" width="1440" height="1000" loading="lazy" decoding="async" /></a>
+  <figcaption>Manage body languages in Project settings, independently from the menu language. <a href="/screenshots/en-project-settings.png">Enlarge image</a></figcaption>
+</figure>
 
 ## Distinguish three ways of saving
 
@@ -60,4 +70,3 @@ If saving fails or a conflict requires reloading, protect your current edits in 
 ## Manuscript editing and Writing
 
 Studio changes the creator’s manuscript. Writing adds personal annotations over a Read in Reader. Writing does not write back to the creator’s Studio project or the published Read on Horizon.
-

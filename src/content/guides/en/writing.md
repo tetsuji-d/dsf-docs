@@ -29,6 +29,11 @@ Open a tool’s settings by selecting the chosen tool again or using its availab
 
 The eraser and correction fluid do not remove original content or provide secure redaction.
 
+<figure class="guide-screenshot">
+  <a href="/screenshots/en-writing-tools.png" aria-label="Enlarge screenshot"><img src="/screenshots/en-writing-tools.png" alt="Writing with a sample pen stroke and the pen, text and shape tools" width="1440" height="1000" loading="lazy" decoding="async" /></a>
+  <figcaption>An actual pen stroke on the sample. Choose tools from the bottom bar. <a href="/screenshots/en-writing-tools.png">Enlarge image</a></figcaption>
+</figure>
+
 ## Show and stow the tool bar
 
 Tools appear in a bottom bar. In the current interface, inactivity stows it at the right edge; use the right-edge handle to pull it out again.
@@ -63,6 +68,11 @@ On iPhone or iPad, choose Save to Files or another intended destination in the s
 
 Check that the file was actually saved before confirming completion in Reader. Closing the share sheet or clicking Download alone does not prove completion.
 
+<figure class="guide-screenshot">
+  <a href="/screenshots/en-writing-export.png" aria-label="Enlarge screenshot"><img src="/screenshots/en-writing-export.png" alt="Writing save panel offering editable and shared copies" width="1440" height="1000" loading="lazy" decoding="async" /></a>
+  <figcaption>Local draft storage and DSFR export are separate actions. Choose the copy type for your purpose. <a href="/screenshots/en-writing-export.png">Enlarge image</a></figcaption>
+</figure>
+
 ## Resume a local draft
 
 Open Offline and local drafts in Reader’s Horizon menu and select a draft in the same browser. It restores page position, language, annotations and history.
@@ -79,9 +89,13 @@ Drafts are not cloud synchronization. Site-data deletion or discarded browser st
 
 Application preparation and retaining the Read original are separate. Installing the app or viewing one online page alone does not prove readiness. Missing or updated resources can require preparation again. Discovering new Reads or obtaining originals not yet downloaded requires connectivity.
 
+<figure class="guide-screenshot">
+  <a href="/screenshots/en-offline.png" aria-label="Enlarge screenshot"><img src="/screenshots/en-offline.png" alt="Reader menu showing offline preparation and browser-local drafts" width="1440" height="1000" loading="lazy" decoding="async" /></a>
+  <figcaption>Offline preparation and local drafts in the Reader menu. This example shows the state before preparation. <a href="/screenshots/en-offline.png">Enlarge image</a></figcaption>
+</figure>
+
 ## Return to Reader
 
 Long-press the pencil during Writing to return to Reader. If changes need saving, review the options to save an editable DSFR, return without saving a file, or continue Writing.
 
 Returning without saving a file does not complete file export. Save important changes as an editable .dsfr before finishing.
-

@@ -25,6 +25,11 @@
 
 準備中やエラーがある場合は、表示された理由を確認してください。Flowの組版が未完了の場合など、現在の原稿で配信準備が整わないときは発行を進められません。
 
+<figure class="guide-screenshot">
+  <a href="/screenshots/ja-press.png" aria-label="スクリーンショットを拡大"><img src="/screenshots/ja-press.png" alt="プレスのページ一覧、書き出し準備、出力サイズ、発行操作" width="1440" height="1000" loading="lazy" decoding="async" /></a>
+  <figcaption>未サインインのサンプル原稿で開いたプレス。実際のHorizon発行は行っていません。 <a href="/screenshots/ja-press.png">画像を拡大</a></figcaption>
+</figure>
+
 ## ファイルを配布する
 
 ファイルとして渡す場合は、配布用の.dsfrを書き出します。端末に保存したファイルをReaderで開き、ページ・言語・画像や文字の表示を確認してから配布してください。
@@ -39,6 +44,11 @@
 4. 所有者向けプレビューで、発行した内容を確認します。
 
 新しく発行したリードは下書きです。読者に届けるには、次の公開状態の設定が必要です。
+
+<figure class="guide-screenshot">
+  <a href="/screenshots/ja-press-actions.png" aria-label="スクリーンショットを拡大"><img src="/screenshots/ja-press-actions.png" alt="DSF書き出し、Horizonへ下書き保存、リーズへの操作ボタン" width="281" height="310" loading="lazy" decoding="async" /></a>
+  <figcaption>プレスの発行欄。「.dsfrファイルを保存」と「Horizonへ下書き保存」を区別します。 <a href="/screenshots/ja-press-actions.png">画像を拡大</a></figcaption>
+</figure>
 
 ## 公開状態を選ぶ
 
@@ -64,4 +74,3 @@
 原稿を直して保存しただけでは、発行済みリードの内容は更新されません。必要な修正をした後、プレスから再発行し、リーズで内容と公開状態を確認します。
 
 公開を止めたい場合は、リーズで公開状態を変更します。すでに配布・保存された.dsfrファイルを、公開状態の変更によって回収することはできません。
-

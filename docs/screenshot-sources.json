@@ -1,0 +1,211 @@
+{
+  "captured": "2026-10-23",
+  "sourceCommit": "1bdca31916641defa245eb445af16c5737dab579",
+  "sourceChanges": [
+    "js/platform-menu.js: official guide link",
+    "css/platform-menu.css: official guide link style"
+  ],
+  "source": "Local build of latest main with Writing enabled. No personal account; fictional original page and bundled Writing sample only.",
+  "browser": "Chrome / Windows; desktop viewport 1440x1000, with original crops where useful",
+  "assets": [
+    "ja-menu.png",
+    "ja-reader.png",
+    "ja-reader-display.png",
+    "ja-reader-info.png",
+    "ja-create-location.png",
+    "ja-editor.png",
+    "ja-project-settings.png",
+    "ja-press.png",
+    "ja-press-actions.png",
+    "ja-writing-export.png",
+    "ja-writing-tools.png",
+    "ja-offline.png",
+    "en-menu.png",
+    "en-reader.png",
+    "en-reader-display.png",
+    "en-reader-info.png",
+    "en-editor.png",
+    "en-project-settings.png",
+    "en-press.png",
+    "en-press-actions.png",
+    "en-writing-export.png",
+    "en-writing-tools.png",
+    "en-offline.png"
+  ],
+  "placements": [
+    {
+      "lang": "ja",
+      "guide": "start",
+      "section": "最初に覚える名前",
+      "image": "ja-menu.png"
+    },
+    {
+      "lang": "ja",
+      "guide": "start",
+      "section": "読むところから始める",
+      "image": "ja-reader.png"
+    },
+    {
+      "lang": "ja",
+      "guide": "read",
+      "section": "端末のファイルを開く",
+      "image": "ja-reader.png"
+    },
+    {
+      "lang": "ja",
+      "guide": "read",
+      "section": "表示方法を選ぶ",
+      "image": "ja-reader-display.png"
+    },
+    {
+      "lang": "ja",
+      "guide": "read",
+      "section": "リードの情報と言語",
+      "image": "ja-reader-info.png"
+    },
+    {
+      "lang": "ja",
+      "guide": "create",
+      "section": "原稿を用意する",
+      "image": "ja-create-location.png"
+    },
+    {
+      "lang": "ja",
+      "guide": "create",
+      "section": "ページを編集する",
+      "image": "ja-editor.png"
+    },
+    {
+      "lang": "ja",
+      "guide": "create",
+      "section": "リードの言語を管理する",
+      "image": "ja-project-settings.png"
+    },
+    {
+      "lang": "ja",
+      "guide": "publish",
+      "section": "プレスで配信データを準備する",
+      "image": "ja-press.png"
+    },
+    {
+      "lang": "ja",
+      "guide": "publish",
+      "section": "Horizonに発行する",
+      "image": "ja-press-actions.png"
+    },
+    {
+      "lang": "ja",
+      "guide": "reference",
+      "section": "拡張子と役割",
+      "image": "ja-press-actions.png"
+    },
+    {
+      "lang": "ja",
+      "guide": "reference",
+      "section": "Writingの編集用と共有用",
+      "image": "ja-writing-export.png"
+    },
+    {
+      "lang": "ja",
+      "guide": "writing",
+      "section": "道具を使い分ける",
+      "image": "ja-writing-tools.png"
+    },
+    {
+      "lang": "ja",
+      "guide": "writing",
+      "section": "編集用と共有用を保存する",
+      "image": "ja-writing-export.png"
+    },
+    {
+      "lang": "ja",
+      "guide": "writing",
+      "section": "オフラインで使う前に",
+      "image": "ja-offline.png"
+    },
+    {
+      "lang": "en",
+      "guide": "start",
+      "section": "Names you will see",
+      "image": "en-menu.png"
+    },
+    {
+      "lang": "en",
+      "guide": "start",
+      "section": "Start by reading",
+      "image": "en-reader.png"
+    },
+    {
+      "lang": "en",
+      "guide": "read",
+      "section": "Open a local file",
+      "image": "en-reader.png"
+    },
+    {
+      "lang": "en",
+      "guide": "read",
+      "section": "Choose a display mode",
+      "image": "en-reader-display.png"
+    },
+    {
+      "lang": "en",
+      "guide": "read",
+      "section": "Read information and language",
+      "image": "en-reader-info.png"
+    },
+    {
+      "lang": "en",
+      "guide": "create",
+      "section": "Edit your pages",
+      "image": "en-editor.png"
+    },
+    {
+      "lang": "en",
+      "guide": "create",
+      "section": "Manage Read languages",
+      "image": "en-project-settings.png"
+    },
+    {
+      "lang": "en",
+      "guide": "publish",
+      "section": "Prepare distribution data in Press",
+      "image": "en-press.png"
+    },
+    {
+      "lang": "en",
+      "guide": "publish",
+      "section": "Issue to Horizon",
+      "image": "en-press-actions.png"
+    },
+    {
+      "lang": "en",
+      "guide": "reference",
+      "section": "Extensions and roles",
+      "image": "en-press-actions.png"
+    },
+    {
+      "lang": "en",
+      "guide": "reference",
+      "section": "Editable and shared Writing files",
+      "image": "en-writing-export.png"
+    },
+    {
+      "lang": "en",
+      "guide": "writing",
+      "section": "Choose a tool",
+      "image": "en-writing-tools.png"
+    },
+    {
+      "lang": "en",
+      "guide": "writing",
+      "section": "Save editable or shared copies",
+      "image": "en-writing-export.png"
+    },
+    {
+      "lang": "en",
+      "guide": "writing",
+      "section": "Prepare for offline use",
+      "image": "en-offline.png"
+    }
+  ]
+}

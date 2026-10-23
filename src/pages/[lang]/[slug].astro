@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import GuideLayout from '../../layouts/GuideLayout.astro';
+import ScreenshotViewer from '../../components/ScreenshotViewer.astro';
 import { guides } from '../../data/guide';
 export async function getStaticPaths() {
   const entries = await getCollection('guides');
@@ -25,4 +26,4 @@ const previous = guides[index - 1], next = guides[index + 1];
 <div class="article-content"><Content/></div>
 <nav class="article-pagination" aria-label={ja ? '前後のガイド' : 'Guide navigation'}>{previous ? <a href={'/' + lang + '/' + previous.slug + '/'}><span>← {ja ? '前のガイド' : 'Previous'}</span><strong>{ja ? previous.ja : previous.en}</strong></a> : <span></span>}{next && <a href={'/' + lang + '/' + next.slug + '/'}><span>{ja ? '次のガイド' : 'Next'} →</span><strong>{ja ? next.ja : next.en}</strong></a>}</nav>
 <p class="article-updated">{ja ? '内容確認：2026年10月23日。表示される機能や操作は、利用環境・リードの形式により異なる場合があります。' : 'Reviewed October 23, 2026. Available features and controls can vary by environment and Read format.'}</p>
-</article></div></GuideLayout>
+</article></div><ScreenshotViewer lang={lang}/></GuideLayout>

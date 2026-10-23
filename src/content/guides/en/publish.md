@@ -25,6 +25,11 @@ Saving a manuscript does not publish it. Uploading to Horizon alone does not com
 
 If preparation is running or an error appears, follow its reason. Issuing cannot proceed while required conditions, such as completed Flow typesetting, remain unresolved.
 
+<figure class="guide-screenshot">
+  <a href="/screenshots/en-press.png" aria-label="Enlarge screenshot"><img src="/screenshots/en-press.png" alt="Press showing page previews, readiness, output size and issuing controls" width="1440" height="1000" loading="lazy" decoding="async" /></a>
+  <figcaption>Press with a local sample manuscript while signed out. No issue-to-Horizon operation was performed. <a href="/screenshots/en-press.png">Enlarge image</a></figcaption>
+</figure>
+
 ## Distribute a file
 
 Export a .dsfr for file distribution. Open the saved file in Reader and check pages, languages, images and text before passing it on.
@@ -39,6 +44,11 @@ A .dsfp is the creator’s editable project. Keep it distinct from the file inte
 4. Check the issued content using the owner preview.
 
 A newly issued Read is a draft. Set its publication status next to make it available to readers.
+
+<figure class="guide-screenshot">
+  <a href="/screenshots/en-press-actions.png" aria-label="Enlarge screenshot"><img src="/screenshots/en-press-actions.png" alt="Press controls for exporting a DSFR or saving a draft to Horizon" width="281" height="310" loading="lazy" decoding="async" /></a>
+  <figcaption>The issuing controls distinguish saving a .dsfr file from saving a draft to Horizon. <a href="/screenshots/en-press-actions.png">Enlarge image</a></figcaption>
+</figure>
 
 ## Select a publication status
 
@@ -64,4 +74,3 @@ Use Copy URL in Reads to obtain the Reader link. Check the reader-facing result 
 Editing and saving a manuscript does not update an already issued Read. Issue the revised manuscript again through Press, then verify its content and publication status in Reads.
 
 To stop publication, change its status in Reads. This does not recall .dsfr files that readers have already received or saved.
-

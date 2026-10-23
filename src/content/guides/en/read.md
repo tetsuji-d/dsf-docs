@@ -14,6 +14,11 @@ A shared Read URL also opens Reader. Access can change when the author changes p
 
 Reader also accepts supported .dsfp, .zip, .json and legacy .dsf/.dsp inputs. The primary reading and distribution file is .dsfr. Renaming an extension does not convert the underlying format.
 
+<figure class="guide-screenshot">
+  <a href="/screenshots/en-reader.png" aria-label="Enlarge screenshot"><img src="/screenshots/en-reader.png" alt="DSF Reader showing a local DSFR sample" width="1440" height="1000" loading="lazy" decoding="async" /></a>
+  <figcaption>A local DSFR sample opened in Reader. <a href="/screenshots/en-reader.png">Enlarge image</a></figcaption>
+</figure>
+
 ## Move between pages
 
 Use the previous and next buttons, or page-number navigation, to move to your desired location. Display settings include single-page and spread layouts. Controls are positioned differently on phones and PCs; progression and spread order follow the Read’s settings.
@@ -32,11 +37,21 @@ While Writing is active, page input is used for drawing. Use dedicated page-navi
 
 These controls change presentation. They do not edit the manuscript or recompose its text.
 
+<figure class="guide-screenshot">
+  <a href="/screenshots/en-reader-display.png" aria-label="Enlarge screenshot"><img src="/screenshots/en-reader-display.png" alt="Reader display menu with reading presentation choices" width="1440" height="1000" loading="lazy" decoding="async" /></a>
+  <figcaption>Choose Flat view, Book view and other presentation modes from the display menu. <a href="/screenshots/en-reader-display.png">Enlarge image</a></figcaption>
+</figure>
+
 ## Read information and language
 
 Use the information button (i) for metadata and available body languages. A multilingual Read lets you choose from the variants it includes.
 
 Menu language in the shared application menu is independent. Changing it does not generate translations or add body-language variants.
+
+<figure class="guide-screenshot">
+  <a href="/screenshots/en-reader-info.png" aria-label="Enlarge screenshot"><img src="/screenshots/en-reader-info.png" alt="Reader information panel and included Read languages" width="1440" height="1000" loading="lazy" decoding="async" /></a>
+  <figcaption>Read information shows the available body languages. The sample body text is Japanese. <a href="/screenshots/en-reader-info.png">Enlarge image</a></figcaption>
+</figure>
 
 ## Add your own notes
 
@@ -50,4 +65,3 @@ Some inputs do not allow Writing, including annotation-locked shared files and S
 - **A file fails**: check that its download finished and that its format is supported. Keep the original while obtaining another copy.
 - **A language is missing**: check whether it is included in the Read; menu language cannot add it.
 - **Annotations are missing**: open the local draft in the same browser, or the editable .dsfr containing your notes. Use a file to move them between devices.
-

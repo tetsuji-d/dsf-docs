@@ -7,6 +7,11 @@
 
 ダッシュボードでは、クラウド原稿と「このブラウザの作業コピー」を区別します。ダウンロードした.dsfpは、ブラウザー内の作業コピー一覧とは別のファイルです。
 
+<figure class="guide-screenshot">
+  <a href="/screenshots/ja-create-location.png" aria-label="スクリーンショットを拡大"><img src="/screenshots/ja-create-location.png" alt="新規作成時にこの端末またはクラウドを選ぶ制作場所のダイアログ" width="540" height="233" loading="lazy" decoding="async" /></a>
+  <figcaption>制作場所を選ぶ画面。ここでは未サインインで「この端末で作成」を選んでいます。 <a href="/screenshots/ja-create-location.png">画像を拡大</a></figcaption>
+</figure>
+
 ## 原稿名とリードタイトル
 
 プロジェクトを整理するための名前と、読者に見せるリードタイトルは区別して扱います。公開前にはリード情報を確認し、対象の言語のタイトルなどを設定してください。
@@ -32,11 +37,21 @@ Flowは制作側の編集方式です。Readerで端末幅に合わせて本文�
 
 固定レイアウトでは余白や文字位置も表現の一部です。スマートフォンで読むことを想定し、縮小表示でも本文が読みやすいか確認してください。
 
+<figure class="guide-screenshot">
+  <a href="/screenshots/ja-editor.png" aria-label="スクリーンショットを拡大"><img src="/screenshots/ja-editor.png" alt="説明用の9対16ページ画像を配置したStudioのエディター" width="1440" height="1000" loading="lazy" decoding="async" /></a>
+  <figcaption>架空のページ画像を読み込んだ編集画面。上部に編集やプレスへの入口があります。 <a href="/screenshots/ja-editor.png">画像を拡大</a></figcaption>
+</figure>
+
 ## リードの言語を管理する
 
 プロジェクトの言語設定と、各原稿の言語を確認します。言語を追加しただけでは、翻訳本文は作られません。必要な言語ごとに本文・画像・タイトルなどを用意します。
 
 Readerで言語を切り替えたときにも、意図したページ構成になっているかプレビューで確認します。
+
+<figure class="guide-screenshot">
+  <a href="/screenshots/ja-project-settings.png" aria-label="スクリーンショットを拡大"><img src="/screenshots/ja-project-settings.png" alt="プロジェクト設定内のリードの既定言語と追加言語の設定" width="1440" height="1000" loading="lazy" decoding="async" /></a>
+  <figcaption>プロジェクト設定で本文の言語を管理します。メニュー言語の設定とは別です。 <a href="/screenshots/ja-project-settings.png">画像を拡大</a></figcaption>
+</figure>
 
 ## 3つの保存先を区別する
 
@@ -60,4 +75,3 @@ Readerで言語を切り替えたときにも、意図したページ構成に�
 ## 原稿の編集とWritingの違い
 
 Studioでは、作者がリードの原稿そのものを編集します。Writingは、Readerで開いたリードに自分の書き込みを重ねる機能です。Writingの変更は、作者のStudio原稿やHorizonの公開リードへ書き戻されません。
-

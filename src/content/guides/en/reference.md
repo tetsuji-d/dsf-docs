@@ -8,6 +8,11 @@
 
 New output uses .dsfr and .dsfp. When saving an old .dsp project, choose a new .dsfp destination and retain the original.
 
+<figure class="guide-screenshot">
+  <a href="/screenshots/en-press-actions.png" aria-label="Enlarge screenshot"><img src="/screenshots/en-press-actions.png" alt="The distribution file export action in Press" width="281" height="310" loading="lazy" decoding="async" /></a>
+  <figcaption>The distribution export action. Some interface labels use DSP/DSF; current file extensions are .dsfp/.dsfr. <a href="/screenshots/en-press-actions.png">Enlarge image</a></figcaption>
+</figure>
+
 ## DSF Read (.dsfr)
 
 A Read bundles pages, languages, presentation information and assets for reading. It is distinct from an editable authoring project.
@@ -32,6 +37,11 @@ Both use .dsfr but serve different purposes.
 | Shared | Yes | Locked | Excludes editing history |
 
 Shared filenames may add -shared to distinguish them. Check the export type before sending notes so you do not unintentionally distribute editing history.
+
+<figure class="guide-screenshot">
+  <a href="/screenshots/en-writing-export.png" aria-label="Enlarge screenshot"><img src="/screenshots/en-writing-export.png" alt="Writing save panel with editable and shared file choices" width="1440" height="1000" loading="lazy" decoding="async" /></a>
+  <figcaption>Choose an editable or shared Writing copy. Both saved file types use .dsfr. <a href="/screenshots/en-writing-export.png">Enlarge image</a></figcaption>
+</figure>
 
 ## Inside the ZIP container
 
@@ -59,4 +69,3 @@ Renaming an extension does not convert the internal format or add features. Unsu
 - Distinguish .dsfr from .dsfp and editable Writing from shared Writing.
 - Reopen a distribution .dsfr in Reader and an editable .dsfp in Studio.
 - A share or download click alone does not prove OS-level saving completed. Check the actual destination.
-

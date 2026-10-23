@@ -29,6 +29,11 @@ Horizonのリードでは、初回に書き込み用の原本を取得する準�
 
 消しゴムや修正液は、原本を消したり機密情報を削除したりするための機能ではありません。
 
+<figure class="guide-screenshot">
+  <a href="/screenshots/ja-writing-tools.png" aria-label="スクリーンショットを拡大"><img src="/screenshots/ja-writing-tools.png" alt="サンプルに線を書き、下部にペンや文字、図形の道具を表示したWriting" width="1440" height="1000" loading="lazy" decoding="async" /></a>
+  <figcaption>サンプルに線を書いた状態。下部のバーから道具を選びます。 <a href="/screenshots/ja-writing-tools.png">画像を拡大</a></figcaption>
+</figure>
+
 ## 道具バーを出す・しまう
 
 道具は下部のバーに並びます。現在のUIでは、操作していないとバーが右端へ収納されます。右端の取っ手から引き出せます。
@@ -63,6 +68,11 @@ iPhoneやiPadで共有メニューを使う場合は「“ファイル”に保�
 
 実際にファイルが保存されたことを確認し、画面の保存確認を行います。共有メニューを閉じたり、ダウンロードを押したりしたことだけでは、保存完了にはなりません。
 
+<figure class="guide-screenshot">
+  <a href="/screenshots/ja-writing-export.png" aria-label="スクリーンショットを拡大"><img src="/screenshots/ja-writing-export.png" alt="Writingの編集用ファイルと共有用ファイルを選ぶ保存パネル" width="1440" height="1000" loading="lazy" decoding="async" /></a>
+  <figcaption>端末内の下書き保存とDSFRへの書き出しは別操作です。用途に応じて編集用・共有用を選びます。 <a href="/screenshots/ja-writing-export.png">画像を拡大</a></figcaption>
+</figure>
+
 ## 端末内の下書きから再開する
 
 ReaderのHorizonメニューにある「オフライン・端末内の下書き」から、同じブラウザーに残った下書きを選択できます。ページ位置・言語・書き込み・履歴を復帰して作業を続けます。
@@ -79,9 +89,13 @@ ReaderのHorizonメニューにある「オフライン・端末内の下書き�
 
 アプリの準備とリードの原本の保存は別です。インストールしたことや、オンラインで1ページ読めたことだけでは準備完了とは限りません。必要な資源が消えたり版が変わったりした場合は再準備します。Horizonで新しいリードを探すことや、未取得の原本を取得することには通信が必要です。
 
+<figure class="guide-screenshot">
+  <a href="/screenshots/ja-offline.png" aria-label="スクリーンショットを拡大"><img src="/screenshots/ja-offline.png" alt="Readerメニューのオフライン準備と端末内下書きの項目" width="1440" height="1000" loading="lazy" decoding="async" /></a>
+  <figcaption>Readerのメニューにあるオフライン準備と端末内下書き。画像は準備前の表示例です。 <a href="/screenshots/ja-offline.png">画像を拡大</a></figcaption>
+</figure>
+
 ## Readerへ戻る
 
 Writing中の鉛筆を長押しするとReaderへ戻る操作に進みます。保存が必要な変更がある場合は、編集用DSFRの保存、ファイルに保存せず戻る、書き込みを続ける選択肢を確認します。
 
 「ファイルに保存せず戻る」は、ファイルへの書き出しを完了する操作ではありません。大切な変更は、終了前に編集用.dsfrへ保存してください。
-

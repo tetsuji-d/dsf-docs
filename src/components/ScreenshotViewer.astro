@@ -1,0 +1,97 @@
+---
+const { lang = 'ja' } = Astro.props;
+const ja = lang === 'ja';
+---
+<dialog id="screenshot-viewer" class="screenshot-viewer" aria-labelledby="screenshot-viewer-title" data-original-label={ja ? '原寸表示' : 'Actual size'} data-fit-label={ja ? '全体を表示' : 'Fit image'}>
+  <header class="screenshot-viewer-header">
+    <h2 id="screenshot-viewer-title">{ja ? '画像の拡大表示' : 'Screenshot'}</h2>
+    <div>
+      <button type="button" data-image-size aria-pressed="false">{ja ? '原寸表示' : 'Actual size'}</button>
+      <button type="button" data-image-close autofocus><span aria-hidden="true">←</span> {ja ? '説明に戻る' : 'Back to guide'} <span aria-hidden="true">×</span></button>
+    </div>
+  </header>
+  <div class="screenshot-viewer-frame" tabindex="0" aria-label={ja ? '拡大画像。原寸表示ではスクロールできます' : 'Enlarged image. Scroll when viewing at actual size'}><img data-viewer-image alt="" /></div>
+  <p class="screenshot-viewer-caption" data-image-caption></p>
+</dialog>
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>('#screenshot-viewer');
+  if (dialog) {
+    const image = dialog.querySelector<HTMLImageElement>('[data-viewer-image]')!;
+    const caption = dialog.querySelector<HTMLElement>('[data-image-caption]')!;
+    const size = dialog.querySelector<HTMLButtonElement>('[data-image-size]')!;
+    const close = dialog.querySelector<HTMLButtonElement>('[data-image-close]')!;
+    const frame = dialog.querySelector<HTMLElement>('.screenshot-viewer-frame')!;
+    let trigger: HTMLAnchorElement | null = null;
+    let closing = false;
+    const entryKey = 'dsfGuideScreenshot';
+    function resetSize() {
+      dialog!.dataset.original = 'false';
+      size.setAttribute('aria-pressed', 'false');
+      size.textContent = dialog!.dataset.originalLabel!;
+      frame.scrollTop = frame.scrollLeft = 0;
+    }
+    function show(link: HTMLAnchorElement) {
+      const figure = link.closest('figure');
+      const original = figure?.querySelector('img');
+      if (!original) return;
+      trigger = link;
+      image.src = original.src;
+      image.alt = original.alt;
+      image.width = Number(original.getAttribute('width'));
+      image.height = Number(original.getAttribute('height'));
+      caption.textContent = Array.from(figure!.querySelector('figcaption')?.childNodes || [])
+        .filter(node => node.nodeType === Node.TEXT_NODE).map(node => node.textContent).join('').trim();
+      resetSize();
+      document.documentElement.classList.add('screenshot-open');
+      if (!dialog!.open) dialog!.showModal();
+      close.focus({preventScroll: true});
+    }
+    function hide() {
+      closing = false;
+      if (dialog!.open) dialog!.close();
+    }
+    function requestClose() {
+      if (closing) return;
+      if (history.state?.[entryKey]) { closing = true; history.back(); }
+      else hide();
+    }
+    for (const link of document.querySelectorAll<HTMLAnchorElement>('.guide-screenshot a')) {
+      link.setAttribute('aria-haspopup', 'dialog');
+      link.setAttribute('aria-controls', dialog.id);
+      link.addEventListener('click', event => {
+        if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        show(link);
+        history.pushState({...history.state, [entryKey]: link.getAttribute('href')}, '');
+      });
+    }
+    close.addEventListener('click', requestClose);
+    dialog.addEventListener('cancel', event => { event.preventDefault(); requestClose(); });
+    dialog.addEventListener('click', event => {
+      if (event.target !== dialog) return;
+      const rect = dialog.getBoundingClientRect();
+      if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) requestClose();
+    });
+    dialog.addEventListener('close', () => {
+      document.documentElement.classList.remove('screenshot-open');
+      trigger?.focus({preventScroll: true});
+    });
+    size.addEventListener('click', () => {
+      const original = dialog.dataset.original !== 'true';
+      dialog.dataset.original = String(original);
+      size.setAttribute('aria-pressed', String(original));
+      size.textContent = original ? dialog.dataset.fitLabel! : dialog.dataset.originalLabel!;
+      frame.scrollTop = frame.scrollLeft = 0;
+    });
+    window.addEventListener('popstate', () => {
+      const href = history.state?.[entryKey];
+      if (!href) { hide(); return; }
+      const link = Array.from(document.querySelectorAll<HTMLAnchorElement>('.guide-screenshot a')).find(a => a.getAttribute('href') === href);
+      if (link) { closing = false; show(link); }
+      else hide();
+    });
+    window.addEventListener('pageshow', () => {
+      if (!history.state?.[entryKey]) hide();
+    });
+  }
+</script>
