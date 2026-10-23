@@ -1,0 +1,28 @@
+---
+import { getCollection, render } from 'astro:content';
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { guides } from '../../data/guide';
+export async function getStaticPaths() {
+  const entries = await getCollection('guides');
+  return ['ja', 'en'].flatMap(lang => guides.map(guide => {
+    const entry = entries.find(item => item.id === lang + '/' + guide.slug);
+    if (!entry) throw new Error('Missing guide: ' + lang + '/' + guide.slug);
+    return {params: {lang, slug: guide.slug}, props: {guide, entry}};
+  }));
+}
+const {guide, entry} = Astro.props;
+const {lang} = Astro.params;
+const ja = lang === 'ja';
+const {Content, headings} = await render(entry);
+const index = guides.findIndex(item => item.slug === guide.slug);
+const previous = guides[index - 1], next = guides[index + 1];
+---
+<GuideLayout lang={lang} slug={guide.slug + '/'} title={ja ? guide.ja : guide.en} description={ja ? guide.descJa : guide.descEn}>
+<div class="article-shell">
+<aside class="guide-sidebar"><p class="eyebrow">OFFICIAL GUIDE</p><nav aria-label={ja ? 'ガイド一覧' : 'Guide pages'}>{guides.map(g => <a href={'/' + lang + '/' + g.slug + '/'} aria-current={g.slug === guide.slug ? 'page' : undefined}>{ja ? g.ja : g.en}</a>)}</nav><a class="sidebar-home" href={'/' + lang + '/'}>← {ja ? 'トップへ' : 'Guide home'}</a></aside>
+<article><a class="back-link" href={'/' + lang + '/'}>← {ja ? 'Horizon 公式ガイド' : 'Horizon Official Guide'}</a><p class="eyebrow">HORIZON GUIDE / {guide.number}</p><h1>{ja ? guide.ja : guide.en}</h1><p class="article-lead">{ja ? guide.descJa : guide.descEn}</p><p class="article-summary">{ja ? guide.bodyJa : guide.bodyEn}</p>
+<nav class="article-toc" aria-label={ja ? 'このページの目次' : 'On this page'}><p>{ja ? 'このページでわかること' : 'On this page'}</p><ol>{headings.filter(h => h.depth === 2).map(h => <li><a href={'#' + h.slug}>{h.text}</a></li>)}</ol></nav>
+<div class="article-content"><Content/></div>
+<nav class="article-pagination" aria-label={ja ? '前後のガイド' : 'Guide navigation'}>{previous ? <a href={'/' + lang + '/' + previous.slug + '/'}><span>← {ja ? '前のガイド' : 'Previous'}</span><strong>{ja ? previous.ja : previous.en}</strong></a> : <span></span>}{next && <a href={'/' + lang + '/' + next.slug + '/'}><span>{ja ? '次のガイド' : 'Next'} →</span><strong>{ja ? next.ja : next.en}</strong></a>}</nav>
+<p class="article-updated">{ja ? '内容確認：2026年10月23日。表示される機能や操作は、利用環境・リードの形式により異なる場合があります。' : 'Reviewed October 23, 2026. Available features and controls can vary by environment and Read format.'}</p>
+</article></div></GuideLayout>

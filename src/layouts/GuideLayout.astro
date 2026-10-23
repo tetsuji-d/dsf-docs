@@ -1,0 +1,13 @@
+---
+import '../styles/guide.css';
+import mark from '../assets/horizon-mark.svg?url';
+const { lang = 'ja', title = 'Horizon 公式ガイド', description = 'DSFの読む・つくる・公開するをつなぐ公式ガイド。', slug = '' } = Astro.props;
+const ja = lang === 'ja';
+const home = '/' + lang + '/';
+---
+<!doctype html>
+<html lang={lang}><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width"/><title>{title} | DSF Horizon Guide</title><meta name="description" content={description}/><link rel="icon" href="/favicon.svg"/><link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)}/><link rel="alternate" hreflang="ja" href={new URL('/ja/' + slug, Astro.site)}/><link rel="alternate" hreflang="en" href={new URL('/en/' + slug, Astro.site)}/></head>
+<body><a class="skip" href="#main">{ja ? '本文へ移動' : 'Skip to content'}</a>
+<header class="header"><a href={home} class="brand" aria-label={ja ? 'DSF 公式ガイド ホーム' : 'DSF Horizon Guide home'}><img class="horizon-mark" src={mark} alt="" width="14" height="34"/><span class="horizon-wordmark">Horizon</span><span class="brand-divider"></span><span>{ja ? '公式ガイド' : 'Official guide'}</span></a><nav aria-label={ja ? 'メインナビゲーション' : 'Main navigation'}><a href={home + '#guides'}>{ja ? 'ガイド' : 'Guides'}</a><a href={home + 'reference/'}>{ja ? '仕様' : 'Format'}</a><a lang={ja ? 'en' : 'ja'} href={'/' + (ja ? 'en' : 'ja') + '/' + slug}>{ja ? 'English' : '日本語'}</a><a class="app-link" href="https://dsf.ink/">{ja ? 'Horizonを開く' : 'Horizon home'} <span aria-hidden="true">↗</span></a></nav></header>
+<main id="main"><slot/></main><footer><a class="footer-brand" href={home}><img class="horizon-mark" src={mark} alt="" width="12" height="30"/> Horizon <span>DSF Official Guide</span></a><p>{ja ? 'レイアウトも、リードの一部。' : 'Layout is content.'}</p><a href="https://dsf.ink/">dsf.ink ↗</a></footer></body></html>
+
